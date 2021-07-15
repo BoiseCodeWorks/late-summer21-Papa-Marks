@@ -1,19 +1,38 @@
 @import "./_variables.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+// REVIEW[epic=sass] importing font into sass
+@import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
 @import "./_overrides.scss";
 @import "./custom.scss";
 @import "./loaders.scss";
+
+// REVIEW[epic=sass] creating new SASS class
+.pizza-font {
+  font-family: 'Amarante', cursive;
+  text-shadow: -2px 2px $secondary
+}
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: $body-bg;
+  background-image: url('../img/background.jpg');
+  background-position: center;
+  background-size: cover; 
 }
 
 main {
-  flex-grow: 1;
+  flex-grow: 1;  
 }
 
 
+.bg-pizza {
+  background-image: url("../img/pizza.jpg");
+  background-position: center;
+  background-size: cover; 
+}
 
+.shadow-light {
+  box-shadow: -1px 1px 4px white;
+}

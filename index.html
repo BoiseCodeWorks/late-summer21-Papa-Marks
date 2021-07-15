@@ -14,22 +14,47 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+        <nav class="navbar navbar-dark navbar-expand bg-primary text-light">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">papa-marks</span>
+                <h1 class="ml-2 pizza-font">Papa Mark's Pizzeria</h1>
             </a>
         </nav>
     </header>
     <main class="container">
-        <div id="app"></div>
+        <div class="row">
+            <div class="col-md-8 mt-4">
+                <form onsubmit="app.pizzasController.createPizza()" class="text-light d-flex justify-content-between">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="crust">Crust</label>
+                        <input type="text" name="crust" id="crust" class="form-control" placeholder="crust">
+                    </div>
+                    <div class="form-group">
+                        <label for="size">Size</label>
+                        <select class="form-control" name="size" id="size">
+                            <option>Kids</option>
+                            <option selected>Medium</option>
+                            <option>Large</option>
+                            <option>MEGA</option>
+                        </select>
+                    </div>
+                    <div class="d-flex">
+                        <button type="submit" class="btn btn-outline-secondary">Order Pizza</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" id="pizzas">
+        </div>
     </main>
-    <footer class="bg-dark text-light">
+    <footer class="bg-primary text-light">
         <div class="text-center">
             <p><small>Made with love by Codeworks</small></p>
         </div>
     </footer>
-
     <script src="app/main.js" type="module"></script>
 </body>
 

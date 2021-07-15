@@ -1,7 +1,8 @@
 $body-bg: #f2f2f2;
 
-$primary: #3BA5DC;
-$secondary: #FF3697;
+// REVIEW[epic=sass] changing bootstrap variables
+$primary: #AA3535;
+$secondary: #0C9200;
 $danger: #EB5757;
 $success: #27AE60;
 $warning: #FF7F50;
@@ -11,7 +12,7 @@ $dark: #272727;
 $blue: blue;
 $indigo: indigo;
 $purple: purple;
-$pink: pink;
+$pink: rgb(255, 107, 131);
 $red: red;
 $orange: orange;
 $yellow: yellow;

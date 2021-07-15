@@ -1,10 +1,10 @@
-import Value from "./Models/Value.js"
+import Pizza from "./Models/Pizza.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
-  /** @type {Value[]} */
-  values = []
+  /** @type {Pizza[]} */
+  pizzas = [new Pizza({ crust: "Pan", name: "Class", size: "MEGA" })]
 }
 
 export const ProxyState = new Proxy(new AppState(), {
