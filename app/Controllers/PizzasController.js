@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { pizzasService } from "../Services/PizzasService.js"
+import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 function _draw() {
   let template = ''
@@ -12,9 +13,14 @@ function _draw() {
 export default class PizzasController {
   constructor() {
     ProxyState.on('pizzas', _draw)
+    ProxyState.on('toppings', _draw)
+    ProxyState.on('pizzas', saveState)
+    ProxyState.on('toppings', saveState)
+
+    loadState()
 
     // NOTE this is here so when the page first loads it draws the pizzas already in the proxystate
-    _draw()
+    // _draw()
   }
 
 
@@ -28,5 +34,26 @@ export default class PizzasController {
       size: form.size.value
     }
     pizzasService.createPizza(rawPizza)
+    form.reset()
+  }
+
+
+  destroy(id) {
+    pizzasService.destroy(id)
+  }
+
+  addTopping(pizzaId) {
+    event.preventDefault()
+    let form = event.target
+    let rawTopping = {
+      pizzaId,
+      name: form.topping.value
+    }
+    pizzasService.addTopping(rawTopping)
+    form.reset()
+  }
+
+  removeTopping(id) {
+    pizzasService.removeTopping(id)
   }
 }

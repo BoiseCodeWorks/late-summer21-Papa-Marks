@@ -10770,4 +10770,12 @@ main {
   box-shadow: -1px 1px 4px white;
 }
 
+.action {
+  text-shadow: -1px 1px 4px white;
+  cursor: pointer;
+}
+.action:hover {
+  transform: scale(1.1);
+}
+
 /*# sourceMappingURL=main.css.map */
